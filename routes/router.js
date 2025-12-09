@@ -19,6 +19,13 @@ router.get('/actor-form', (req, res)=> {
     })
 })
 
+router.get('/program-form', (req, res)=> {
+    res.render('pages/programForm', {
+        title: 'Program Form',
+        name: 'Program Form'
+    })
+})
+
 router.get('/actors', (req, res)=> {
 
     const url = 'http://localhost:3000/api/actor'

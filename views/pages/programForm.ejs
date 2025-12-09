@@ -1,0 +1,85 @@
+<%- include('../partials/header') %>
+
+<!-- not sure if this is how it should be done/ maybe works/ just doesnt have producer id-->
+
+<main class="main" id="main">
+    <div class="container">
+        <h2 class="text-center text-capitalize">add a program</h2>
+            <form action="http://localhost:3000/api/program/create"
+            method="post"
+            class="form" 
+            id="programForm">
+
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="title" class="form-label">title</label>
+                    <input type="text" id="title" name="title" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="yr_released" class="form-label">year released</label>
+                    <input type="number" id="yr_released" name="yr_released" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="runtime" class="form-label">runtime</label>
+                    <input type="text" id="runtime" name="runtime" class="form-control">
+                </div>
+                <div class="mb-3">
+<label class="form-label">Format</label><br>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="format" value="Live-action" required>
+    <label class="form-check-label">Live-action</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="format" value="Animation" required>
+    <label class="form-check-label">Animation</label>
+</div>
+</div>
+                <div class="mb-3">
+<label class="form-label">Program Rating</label><br>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="program_rating" value="G">
+    <label class="form-check-label">G</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="program_rating" value="PG">
+    <label class="form-check-label">PG</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="program_rating" value="PG-13">
+    <label class="form-check-label">PG-13</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="program_rating" value="R">
+    <label class="form-check-label">R</label>
+</div>
+</div>
+                <div class="col">
+                    <label for="rating" class="form-label">1.0-10.0</label>
+                    <input type="number" id="rating" name="rating" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="img_url" class="form-label">img file name</label>
+                    <input type="text" id="img_url" name="img_url" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea name="summary" class="form-control" rows="3"></textarea>
+                </div>
+            </div>
+            <button 
+            class="btn btn-primary"
+            type="submit"
+            role="button">
+            Add a program
+            </button>
+            </form>
+    </div>
+</main>
+
+<%- include('../partials/footer') %>
