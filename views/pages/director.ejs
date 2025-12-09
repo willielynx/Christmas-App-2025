@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+
+<main class="main" id="main">
+    <div class="row">
+        <div class="col align-self-end">
+            <% if (prev != null) { %>
+                <a href="?page=<%= prev %>">prev</a>
+            <%}%>
+
+            <% if (next != null) { %>
+                <a href="?page=<%= next %>">next</a>
+            <%}%>
+        </div>
+    </div>
+
+
+    <div class="row row-cols-1 row-cols-md-3  g-4">
+        <% data.forEach(director => { %>
+            <div class="col">
+                <div class="card h-75">
+                    <div class="card-body">
+                        <h2 class ='card-title'>
+                            <%= director.fName %> <%= director.lName %>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</main>
+
+
+
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,45 @@
+<%- include('../partials/header') %>
+<main class="main" id="main">
+    
+<div class="row">
+        <div class="col align-self-end">
+            <% if (prev != null) { %>
+                <a href="?page=<%= prev %>">prev</a>
+            <%}%>
+
+            <% if (next != null) { %>
+                <a href="?page=<%= next %>">next</a>
+            <%}%>
+        </div>
+    </div>
+
+<div class="row row-cols-1 row-cols-md-3  g-4">
+
+    
+        <% data.forEach(program => { %>
+            <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                <%= program.title %> (<%= program.yr_released %>)
+                                <%= program.program_rating %>
+                            </h2>
+                            <p>rating: <%= program.rating %></p>
+                            <img src="/images/<%= program.title %>.jpg" style="width:200px"alt="image of <%= program.title %>">
+                            <div>
+                                <p>Runtime: <%= program.runtime %></p>
+                                <p>Format: <%= program.format %></p>
+                                <p>Description: <%= program.summary %></p>
+                                <p>Actors: <%= program.actors %></p>
+                                <p>Directors: <%= program.directors %></p>
+                                <p>Production: <%= program.producer %></p>
+                                <p>Where to stream: <%= program.streaming_platforms %></p>
+                            </div>
+                        </div>
+                            </div>
+                            </div>
+        <% }) %>
+        </div>
+    </main>
+
+<%- include('../partials/footer') %>
